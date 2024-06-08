@@ -1,8 +1,15 @@
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import PySimpleGUI as sg
-import sqlite3
+#MatPlotLib
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+#SQL
+import sqlite3
 import sqlalchemy
+
+#GUI
+import PySimpleGUI as sg
+
+#Pandas
 import pandas as pd
 
 
@@ -13,6 +20,7 @@ connection = sqlite3.connect("DATABASE.db")
 c = connection.execute("Select * from SignUp")
 
 def exercises():
+
     conn = sqlalchemy.create_engine('sqlite:///DATABASE.db')
 
     data = pd.read_sql_table("Exercises", conn)
